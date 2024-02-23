@@ -15,7 +15,7 @@ const Todo = async () => {
   return (
     <div>
       <Header title={"Todo"} subtitle={""} />
-      <AddTodoForm userId={user._id} />
+      <AddTodoForm userId={user._id} creditBalance={user.creditBalance} />
     </div>
   );
 };

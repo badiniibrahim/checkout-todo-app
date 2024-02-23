@@ -14,8 +14,9 @@ import { handleError } from "@/lib/utils";
 import { createTodo } from "@/lib/actions/todo.actions";
 import { updateCredits } from "@/lib/actions/user.actions";
 import { creditFee } from "@/constants";
+import { InsufficientCreditsModal } from "./InsufficientCreditsModal";
 
-const AddTodoForm = ({ userId }: TodoAddTodoFormProps) => {
+const AddTodoForm = ({ userId, creditBalance }: TodoAddTodoFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isPending, startTransition] = useTransition();
 
@@ -51,6 +52,8 @@ const AddTodoForm = ({ userId }: TodoAddTodoFormProps) => {
     <div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          {creditBalance < Math.abs(creditFee) && <InsufficientCreditsModal />}
+
           <CustomField
             control={form.control}
             name="title"

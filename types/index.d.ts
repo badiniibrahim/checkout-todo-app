@@ -68,7 +68,7 @@ declare type TransformationFormProps = {
 
 declare type TodoAddTodoFormProps = {
   userId: string;
-  creditBalance?: number;
+  creditBalance: number;
 };
 
 // ====== USER PARAMS
