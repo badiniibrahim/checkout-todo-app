@@ -56,3 +56,24 @@ declare type SearchParamProps = {
   params: { id: string; type: TransformationTypeKey };
   searchParams: { [key: string]: string | string[] | undefined };
 };
+
+declare type TransformationFormProps = {
+  action: "Add" | "Update";
+  userId: string;
+  type: TransformationTypeKey;
+  creditBalance: number;
+  data?: IImage | null;
+  config?: Transformations | null;
+};
+
+declare type TodoAddTodoFormProps = {
+  userId: string;
+  creditBalance?: number;
+};
+
+// ====== USER PARAMS
+declare type CreateTodoParams = {
+  //clerkId: string;
+  title: string;
+  content: string;
+};

@@ -1,4 +1,4 @@
-import { Document, Schema, model, models } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const TodoSchema = new Schema({
   title: { type: String, required: true },
@@ -8,6 +8,6 @@ const TodoSchema = new Schema({
   updatedAt: { type: Date, default: Date.now },
 });
 
-const Image = models?.Image || model("Todo", TodoSchema);
+const Todo = models?.Todo || model("Todo", TodoSchema);
 
-export default Image;
+export default Todo;
